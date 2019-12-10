@@ -1,110 +1,228 @@
-<h1>Aplikasi Antrian</h1>
-<br>
+<!DOCTYPE html>
+<html lang="en">
 
-<table border="1" style="width: 100%;">
-    <tr>
-        <td style="width: 40%;  vertical-align: top;">
-            <h2>Ambil Antrian</h2>
-            <hr>
-            <h3>Antrian CS</h3>
-            <input id="form_name_type" placeholder="Nama Anda">
-            <button id="form_btn_type" value="type">Ambil Nomor</button>
-            <hr>
-            <h3>Antrian TELLER</h3>
-            <input id="antrian_btn_type" placeholder="Nama Anda">
-            <button id="antrian_btn_type" value="type">Ambil Nomor</button>
-            <hr>
-        </td>
-        <td style="vertical-align: top;">
-            <h2>Antrian Saat Ini</h2>
-            <hr>
-            <h3>Antrian CS</h3>
-            <table>
-                <tr>
-                    <td style="vertical-align: top; text-align: right;">
-                        <b>CS-1</b>
-                        <br>
-                        <button id="antrian_btn_type" value="type">Istirahat</button>
-                        <button id="antrian_btn_type" value="type">Lanjut</button>            
-                    </td>
-                    <td><h1>[1] Roni</h1></td>
-                </tr>
-                <tr>
-                    <td style="vertical-align: top; text-align: right;">
-                        <b>CS-2</b>
-                        <br>
-                        <button id="antrian_btn_type" value="type">Istirahat</button>
-                        <button id="antrian_btn_type" value="type">Lanjut</button>            
-                    </td>
-                    <td><h1>[3] Juli</h1></td>
-                </tr>
-                <tr>
-                    <td style="vertical-align: top; text-align: right;">
-                        <b>CS-3</b>
-                        <br>
-                        <button id="antrian_btn_type" value="type">Istirahat</button>
-                        <button id="antrian_btn_type" value="type">Lanjut</button>            
-                    </td>
-                    <td><h1>[ - ]</h1></td>
-                </tr>
-            </table>
-            <hr>
-            <h3>Antrian TELLER</h3>
-            <table>
-                <tr>
-                    <td style="vertical-align: top; text-align: right;">
-                        <b>TELLER-1</b>
-                        <br>
-                        <button id="antrian_btn_type" value="type">Istirahat</button>
-                        <button id="antrian_btn_type" value="type">Lanjut</button>            
-                    </td>
-                    <td><h1>[1] Feby</h1></td>
-                </tr>
-                <tr>
-                    <td style="vertical-align: top; text-align: right;">
-                        <b>TELLER-2</b>
-                        <br>
-                        <button id="antrian_btn_type" value="type">Istirahat</button>
-                        <button id="antrian_btn_type" value="type">Lanjut</button>            
-                    </td>
-                    <td><h1>[2] Mey</h1></td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Program Antrian</title>
 
-<hr>
-<h2>Daftar Tunggu</h2>
-<hr>
-<table border="1">
-    <tr>
-        <td style="vertical-align: top;">
-            <h3>Tunggu CS</h3>
-            <hr>
-            <p><b>[4]</b>Agus</p>
-            <p><b>[5]</b>Sari</p>
-        </td>
-        <td style="vertical-align: top;">
-            <h3>Tunggu TELLER</h3>
-            <hr>
-            <p><b>[3]</b> Ari</p>
-            <p><b>[4]</b> Novi</p>
-            <p><b>[5]</b> Septi</p>
-            <p><b>[6]</b> Okta</p>
-        </td>
-    </tr>
-</table>
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
+<body>
 
-<div>
+    <div class="container">
+        <h1>Program Antrian</h1>
+        <div>
 
-</div>
-<script src="setting.js"></script>
-<script src="render.js"></script>
-<script src="logic.js"></script>
-<script>
-    render = new Render(setting);
-    console.log(render.setting);
-</script>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#antrian" data-toggle="tab">Antrian</a></li>
+                <li class=""><a href="#daftar" data-toggle="tab">Daftar</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="antrian">
+                    <div class="row">
+                        <div class="col-md-12 bg-primary">
+                            <h2>Antrian Saat Ini</h2>
+                            <hr>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Antrian CS</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">CS-1</h3>
+                                                </div>
+
+                                                <div class="panel-body text-center text-primary">
+                                                    <h1 class="">[ 1 ] Roni</h1>
+                                                </div>
+                                                <div class="panel-footer text-right">
+                                                    <button class="btn btn-danger">Istirahat</button>
+                                                    <button class="btn btn-success">Selanjutnya</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">CS-2</h3>
+                                                </div>
+
+                                                <div class="panel-body text-center text-danger">
+                                                    <h1 class="">[ - ]</h1>
+                                                </div>
+                                                <div class="panel-footer text-right">
+                                                    <button class="btn btn-danger">Istirahat</button>
+                                                    <button class="btn btn-success">Selanjutnya</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">CS-3</h3>
+                                                </div>
+
+                                                <div class="panel-body text-center text-danger">
+                                                    <h1 class="">[ 4 ] Juli</h1>
+                                                </div>
+                                                <div class="panel-footer text-right">
+                                                    <button class="btn btn-danger">Istirahat</button>
+                                                    <button class="btn btn-success">Selanjutnya</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Antrian TELLER</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">TELLER-1</h3>
+                                                </div>
+
+                                                <div class="panel-body text-center text-danger">
+                                                    <h1 class="">[ 1 ] Feby</h1>
+                                                </div>
+                                                <div class="panel-footer text-right">
+                                                    <button class="btn btn-danger">Istirahat</button>
+                                                    <button class="btn btn-success">Selanjutnya</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">TELLER-2</h3>
+                                                </div>
+
+                                                <div class="panel-body text-center text-danger">
+                                                    <h1 class="">[ 2 ] Mey</h1>
+                                                </div>
+                                                <div class="panel-footer text-right">
+                                                    <button class="btn btn-danger">Istirahat</button>
+                                                    <button class="btn btn-success">Selanjutnya</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="daftar">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title">Ambil Antrian CS</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Nama Anda">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Antri</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title">Ambil Antrian TELLER</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Nama Anda">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Antri</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Daftar Tunggu</h2>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="panel panel-success">
+                                        <!-- Default panel contents -->
+                                        <div class="panel-heading">Antrian CS</div>
+
+                                        <!-- Table -->
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Nama</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>4</td><td>Agus</td></tr>
+                                                <tr><td>5</td><td>Sari</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-success">
+                                        <!-- Default panel contents -->
+                                        <div class="panel-heading">Antrian TELLER</div>
+
+                                        <!-- Table -->
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Nama</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>3</td><td>Ari</td></tr>
+                                                <tr><td>4</td><td>Novi</td></tr>
+                                                <tr><td>5</td><td>Septi</td></tr>
+                                                <tr><td>6</td><td>Okta</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="libs/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

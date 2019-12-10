@@ -1,0 +1,110 @@
+<h1>Aplikasi Antrian</h1>
+<br>
+
+<table border="1" style="width: 100%;">
+    <tr>
+        <td style="width: 40%;  vertical-align: top;">
+            <h2>Ambil Antrian</h2>
+            <hr>
+            <h3>Antrian CS</h3>
+            <input id="form_name_type" placeholder="Nama Anda">
+            <button id="form_btn_type" value="type">Ambil Nomor</button>
+            <hr>
+            <h3>Antrian TELLER</h3>
+            <input id="antrian_btn_type" placeholder="Nama Anda">
+            <button id="antrian_btn_type" value="type">Ambil Nomor</button>
+            <hr>
+        </td>
+        <td style="vertical-align: top;">
+            <h2>Antrian Saat Ini</h2>
+            <hr>
+            <h3>Antrian CS</h3>
+            <table>
+                <tr>
+                    <td style="vertical-align: top; text-align: right;">
+                        <b>CS-1</b>
+                        <br>
+                        <button id="antrian_btn_type" value="type">Istirahat</button>
+                        <button id="antrian_btn_type" value="type">Lanjut</button>            
+                    </td>
+                    <td><h1>[1] Roni</h1></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; text-align: right;">
+                        <b>CS-2</b>
+                        <br>
+                        <button id="antrian_btn_type" value="type">Istirahat</button>
+                        <button id="antrian_btn_type" value="type">Lanjut</button>            
+                    </td>
+                    <td><h1>[3] Juli</h1></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; text-align: right;">
+                        <b>CS-3</b>
+                        <br>
+                        <button id="antrian_btn_type" value="type">Istirahat</button>
+                        <button id="antrian_btn_type" value="type">Lanjut</button>            
+                    </td>
+                    <td><h1>[ - ]</h1></td>
+                </tr>
+            </table>
+            <hr>
+            <h3>Antrian TELLER</h3>
+            <table>
+                <tr>
+                    <td style="vertical-align: top; text-align: right;">
+                        <b>TELLER-1</b>
+                        <br>
+                        <button id="antrian_btn_type" value="type">Istirahat</button>
+                        <button id="antrian_btn_type" value="type">Lanjut</button>            
+                    </td>
+                    <td><h1>[1] Feby</h1></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; text-align: right;">
+                        <b>TELLER-2</b>
+                        <br>
+                        <button id="antrian_btn_type" value="type">Istirahat</button>
+                        <button id="antrian_btn_type" value="type">Lanjut</button>            
+                    </td>
+                    <td><h1>[2] Mey</h1></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<hr>
+<h2>Daftar Tunggu</h2>
+<hr>
+<table border="1">
+    <tr>
+        <td style="vertical-align: top;">
+            <h3>Tunggu CS</h3>
+            <hr>
+            <p><b>[4]</b>Agus</p>
+            <p><b>[5]</b>Sari</p>
+        </td>
+        <td style="vertical-align: top;">
+            <h3>Tunggu TELLER</h3>
+            <hr>
+            <p><b>[3]</b> Ari</p>
+            <p><b>[4]</b> Novi</p>
+            <p><b>[5]</b> Septi</p>
+            <p><b>[6]</b> Okta</p>
+        </td>
+    </tr>
+</table>
+
+
+
+<div>
+
+</div>
+<script src="setting.js"></script>
+<script src="render.js"></script>
+<script src="logic.js"></script>
+<script>
+    render = new Render(setting);
+    console.log(render.setting);
+</script>
