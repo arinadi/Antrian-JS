@@ -9,5 +9,4 @@ var setting = {
             "slot": 2,
         },
     ],
-}
-;
+};

@@ -136,80 +136,12 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="daftar">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h2 class="panel-title">Ambil Antrian CS</h2>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Nama Anda">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">Antri</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h2 class="panel-title">Ambil Antrian TELLER</h2>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Nama Anda">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">Antri</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-4" id="formAntrian">
                         </div>
                         <div class="col-md-8">
                             <h2>Daftar Tunggu</h2>
                             <hr>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="panel panel-success">
-                                        <!-- Default panel contents -->
-                                        <div class="panel-heading">Antrian CS</div>
-
-                                        <!-- Table -->
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>No.</th>
-                                                    <th>Nama</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr><td>4</td><td>Agus</td></tr>
-                                                <tr><td>5</td><td>Sari</td></tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="panel panel-success">
-                                        <!-- Default panel contents -->
-                                        <div class="panel-heading">Antrian TELLER</div>
-
-                                        <!-- Table -->
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>No.</th>
-                                                    <th>Nama</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr><td>3</td><td>Ari</td></tr>
-                                                <tr><td>4</td><td>Novi</td></tr>
-                                                <tr><td>5</td><td>Septi</td></tr>
-                                                <tr><td>6</td><td>Okta</td></tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                            <div class="row" id="listAntrian">
                             </div>
                         </div>
                     </div>
@@ -219,10 +151,68 @@
         </div>
     </div>
 
+    <div class="hidden">
+
+        <div id="partForm">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Ambil Antrian {TYPE}</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <input type="text" id="name{TYPE}" class="form-control" placeholder="Nama Anda">
+                        <input type="hidden" id="number{TYPE}" value="1">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default send-data" data-id="{TYPE}" type="button">Antri</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="partList">
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Antrian {TYPE}</div>
+
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table{TYPE}">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="libs/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- My Custom JavaScript -->
+    <script src="setting.js"></script>
+    <script src="render.js"></script>
+    <script src="logic.js"></script>
+    <script>
+        $(document).ready(function () {
+            antrianData = render.renderPage();
+            console.log(antrianData);
+            $('.send-data').on('click', function () {
+                type = $(this).data('id');
+                antrianData = pushData(type, antrianData);
+                console.log(antrianData);
+                render.renderTable(type, antrianData);
+            })
+        })
+    </script>
 </body>
 
 </html>
